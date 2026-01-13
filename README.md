@@ -1,7 +1,7 @@
 # gene-stabilization-detector
 Automated monitor for GENE scan runs that detects convergence from energy files using steady and oscillatory growth-rate criteria. Upon stabilization, it saves diagnostics, stops the active run, and advances to the next scan case, enabling efficient large-scale parameter scans.
 
-Clone this repo inside `/gene/prob02/` directory, and edit `submit.cmd` (edit the python file path):
+Clone this repo inside `/gene/prob02/` directory, and edit `submit.cmd`:
 
 ```
 #!/bin/bash -l
@@ -29,9 +29,14 @@ export OMP_NUM_THREADS=1
 #do not use file locking for hdf5
 export HDF5_USE_FILE_LOCKING=FALSE
 
+# >>>>>  ADD THE LINES BELOW >>>>>>
+
 module load python/3.11
 #start monitoring scanscript
 python gene-stabilization-detector/monitor_scanscript.py &
+
+# <<<<<  TO HERE <<<<<<<
+
 set -x
 # run GENE
 #srun -l -K -n $SLURM_NTASKS ./gene_perlmutter
