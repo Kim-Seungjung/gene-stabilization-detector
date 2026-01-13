@@ -10,9 +10,9 @@ from scipy import stats
 from scipy.ndimage import uniform_filter1d
 
 
-scan_dir = "/pscratch/sd/k/kim_sj/Case_2_3/scanfiles0000/"
+scan_dir = os.getenv("SCAN_DIR") # "/pscratch/sd/k/kim_sj/Case_2_3/scanfiles0000/"
 output_dir = scan_dir
-stop_dir = "/global/homes/k/kim_sj/gene/prob02"
+stop_dir = os.getenv("STOP_DIR")  #"/global/homes/k/kim_sj/gene/prob02"
 
 inpar_dir = os.path.join(scan_dir, "in_par")
 
