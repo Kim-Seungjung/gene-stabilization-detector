@@ -30,6 +30,8 @@ export OMP_NUM_THREADS=1
 export HDF5_USE_FILE_LOCKING=FALSE
 
 # >>>>>  ADD THE LINES BELOW >>>>>>
+export SCAN_DIR="/pscratch/sd/your/dir/Case_2_3/scanfiles0000/"
+export STOP_DIR="/path/to/your/gene/prob02"
 
 module load python/3.11
 #start monitoring scanscript
